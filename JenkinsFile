@@ -1,0 +1,19 @@
+#!/usr/bin/env Groovy
+
+@Library('ConserviceBuild@develop') _
+
+buildDotnetApplication  {
+    SolutionName = "Conservice.COPA.VirtualCardAPI"
+    WebProjectName = "Conservice.COPA.VirtualCardAPI"
+    ProjectLeadUsername = "rjacobson"
+    GitRepoName = "Conservice.COPA.VirtualCardAPI"
+    GitRepoPath = "UtilityServices/Services/Conservice.COPA.VirtualCardAPI"
+    SourceControlCredentialId = "0adde854-3187-47bc-b9c2-9ef921ae07a7"
+    LivePublishProfile = "VirtualCardApiProduction"
+    TestPublishProfile = "VirtualCardApiStaging"
+	DevPublishProfile = "VirtualCardApiDevelop"
+
+    UnitTests = [
+         "Conservice.COPA.VirtualCardAPI.Tests", "COPA.APIManager.Tests"
+    ]
+}
