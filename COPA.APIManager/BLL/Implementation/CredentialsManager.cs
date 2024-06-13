@@ -2,6 +2,7 @@ using COPA.APIManager.BLL.Interface;
 using COPA.APIManager.BOL;
 using COPA.APIManager.BOL.Interfaces;
 using Microsoft.Extensions.Configuration;
+using System;
 using System.Reflection.Metadata.Ecma335;
 
 namespace COPA.APIManager.BLL
@@ -23,7 +24,7 @@ namespace COPA.APIManager.BLL
         public CredentialsManager(IConfiguration configuration)
         {
             _config = configuration;
-            _token = _config["VCardAuthToken"];
+            _token = Environment.GetEnvironmentVariable("Virtual_Card_Token");
         }
 
         /// <inheritdoc/>
